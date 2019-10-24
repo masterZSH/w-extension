@@ -1,0 +1,74 @@
+{
+    "name": "miniprogram",
+    "displayName": "微信小程序扩展",
+    "description": "微信小程序扩展,wechat,miniprogram",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.39.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+                "id": "wxml",
+                "aliases": ["wxml", "wxml"],
+                "extensions": [".wxml"],
+                "configuration": "./languages/language-wxml-configuration.json"
+            },
+            {
+                "id": "json",
+                "extensions": [
+                    ".json"
+                ]
+            },
+            {
+                "id": "wxs",
+                "extensions": [
+                    ".wxs"
+                ]
+            },
+            {
+                "id": "wxss",
+                "extensions": [
+                    ".wxss"
+                ]
+            }
+        ],
+        "grammars": [{
+            "language": "wxml",
+            "scopeName": "text.html.wxml",
+            "path": "./syntaxes/wxml.tmLanguage.json"
+        }],
+        "snippets": [
+            {
+                "path": "./snippets/.code-snippets"
+            },
+            {
+            
+                "language": "javascript",
+                "path": "./snippets/wxjs.json"
+            },
+            {
+                "language": "typescript",
+                "path": "./snippets/wxjs.json"
+            },
+            {
+                "language": "wxs",
+                "path": "./snippets/wxjs.json"
+            },
+            {
+                "language": "html",
+                "path": "./snippets/wxxml.json"
+            },
+            {
+                "language": "wxml",
+                "path": "./snippets/wxxml.json"
+            },
+            {
+                "language": "json",
+                "path": "./snippets/wxjson.json"
+            }
+        ]
+    }
+}
