@@ -108,6 +108,27 @@
         ],
         "description": "获取小程序实例"
     },
+    "wxRequire":{
+        "prefix": "require",
+        "body": [
+            "const ${1:module}  = require(\"${2}\");"
+        ],
+        "description": "获取小程序实例"
+    },
+    "wxImportAll":{
+        "prefix": "import-all",
+        "body": [
+            "import * as ${1:module} from \"${2}\";"
+        ],
+        "description": "获取小程序实例"
+    },
+    "wxImportObject":{
+        "prefix": "import-object",
+        "body": [
+            "import {${1}} from \"${2}\";"
+        ],
+        "description": "获取小程序实例"
+    },
     "wx.request": {
         "prefix": "request",
         "body": [
