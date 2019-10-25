@@ -15,4 +15,4 @@
 
 
 ## 展示
-![图片](https://filezsh.oss-cn-shenzhen.aliyuncs.com/images/1.gif)
+![图片](https://github.com/masterZSH/dy/blob/master/resources/images/1.gif)
