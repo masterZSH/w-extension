@@ -100,11 +100,19 @@
         ],
         "description": "获取当前页面栈"
     },
+    "page-function":{
+        "prefix": "page-function",
+        "body": [
+            "${1:functionName}: function () {",
+            "\t${2}",
+            "}"
+        ],
+        "description": "获取小程序实例"
+    },
     "getApp": {
         "prefix": "getApp",
         "body": [
-            "${1:const app = } getApp();",
-            "${2}"
+            "${1:const app = } getApp();"
         ],
         "description": "获取小程序实例"
     },
@@ -113,21 +121,21 @@
         "body": [
             "const ${1:module}  = require(\"${2}\");"
         ],
-        "description": "获取小程序实例"
+        "description": "require加载模块"
     },
     "wxImportAll":{
         "prefix": "import-all",
         "body": [
             "import * as ${1:module} from \"${2}\";"
         ],
-        "description": "获取小程序实例"
+        "description": "import加载所有"
     },
     "wxImportObject":{
         "prefix": "import-object",
         "body": [
             "import {${1}} from \"${2}\";"
         ],
-        "description": "获取小程序实例"
+        "description": "import加载对象"
     },
     "wx.request": {
         "prefix": "request",

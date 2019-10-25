@@ -17,6 +17,27 @@
         ],
         "description": "view的循环"
     },
+    "bindtap":{
+        "prefix": "bindtap",
+        "body": [
+            "bindtap = \"${1}\""
+        ],
+        "description": "bindtap"
+    },
+    "comments":{
+        "prefix": "<!--",
+        "body": [
+            "<!--${1}-->"
+        ],
+        "description": "comments"
+    },
+    "catchtap":{
+        "prefix": "catchtap",
+        "body": [
+            "catchtap = \"${1}\""
+        ],
+        "description": "catchtap"
+    },
     "scroll-view": {
         "prefix": "scroll-view",
         "body": [
