@@ -1,17 +1,18 @@
-# a extension on vscode for wechat-miniprogram 
+# 一个灵活、好用、持续维护的微信小程序拓展
 
 
-## Features
+## 特性
 
-1. code highlight
+1. 代码高亮
 
-2. code snippets
+2. 代码片段
 
-    includes（wxml,wxss,page.json,app.json）
+    包含（wxml,wxss,page.json,app.json）
 
-3. new page
+3. 新建小程序页面
 
 4. ...
 
 
-## [中文](README-cn.md)
+## 展示
+![图片](https://filezsh.oss-cn-shenzhen.aliyuncs.com/images/1.gif)
