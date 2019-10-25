@@ -2,7 +2,7 @@
     "name": "miniprogram",
     "displayName": "微信小程序扩展",
     "description": "微信小程序扩展,wechat,miniprogram",
-    "version": "0.0.1",
+    "version": "0.1.0",
     "publisher": "zsh",
     "repository": {
         "type": "git",
@@ -19,7 +19,8 @@
     ],
     "main": "./out/extension.js",
     "contributes": {
-        "languages": [{
+        "languages": [
+            {
                 "id": "wxml",
                 "aliases": [
                     "wxml",
@@ -49,12 +50,15 @@
                 ]
             }
         ],
-        "grammars": [{
-            "language": "wxml",
-            "scopeName": "text.html.wxml",
-            "path": "./syntaxes/wxml.tmLanguage.json"
-        }],
-        "snippets": [{
+        "grammars": [
+            {
+                "language": "wxml",
+                "scopeName": "text.html.wxml",
+                "path": "./syntaxes/wxml.tmLanguage.json"
+            }
+        ],
+        "snippets": [
+            {
                 "path": "./snippets/.code-snippets"
             },
             {
@@ -90,10 +94,12 @@
                 }
             ]
         },
-        "commands": [{
-            "command": "wechat.newPage",
-            "title": "新建小程序页面"
-        }]
+        "commands": [
+            {
+                "command": "wechat.newPage",
+                "title": "新建小程序页面"
+            }
+        ]
     },
     "scripts": {
         "vscode:prepublish": "npm run compile",
