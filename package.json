@@ -3,6 +3,11 @@
     "displayName": "微信小程序扩展",
     "description": "微信小程序扩展,wechat,miniprogram",
     "version": "0.0.1",
+    "publisher": "zsh",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/masterZSH/w-extension"
+    },
     "engines": {
         "vscode": "^1.39.0"
     },

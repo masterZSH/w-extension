@@ -9,7 +9,9 @@
 
     includes（wxml,wxss,page.json,app.json）
 
-3. ...
+3. new page
+
+4. ...
 
 
 ## [中文](README-cn.md)
