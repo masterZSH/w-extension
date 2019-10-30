@@ -13,8 +13,8 @@ before_install:
     fi
   - git clone https://github.com/creationix/nvm.git ./.nvm
   - source ./.nvm/nvm.sh
-  - nvm install 8.9.1
-  - nvm use 8.9.1
+  - nvm install 12.13.0
+  - nvm use 12.13.0
   - yarn global add vsce
 install:
   - yarn
