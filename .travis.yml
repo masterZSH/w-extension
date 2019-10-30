@@ -15,17 +15,5 @@ before_install:
   - source ./.nvm/nvm.sh
   - nvm install 12.13.0
   - nvm use 12.13.0
-  - yarn global add vsce
-install:
-  - yarn
 
-script:
-  - yarn run clean
-  - yarn run vscode:prepublish
-  - if [ $TRAVIS_ENABLE_COVERAGE == "true" ]; then
-        yarn run cover:enable;
-    fi
-  - yarn run test --silent
-  - if [ $TRAVIS_ENABLE_COVERAGE == "true" ]; then
-        yarn run cover:upload;
-    fi
+
