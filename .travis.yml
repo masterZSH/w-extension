@@ -1,6 +1,7 @@
 language: node_js
+sudo false
 node_js:
-  - "12.12.0"
+  - "12.13.0"
 
 os:
   - osx
@@ -18,3 +19,4 @@ install:
 
 script:
   - npm test --silent
+  - npm run compile
