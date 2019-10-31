@@ -1,12 +1,8 @@
 import * as vscode from 'vscode';
 import { config } from '../config/config';
-import { stringToUint8Array } from './tool';
-const workspaceFolders = vscode.workspace.workspaceFolders;
+import { stringToUint8Array, Uint8ArrayToString,formatTextDucument } from './tool';
 
 export namespace Create {
-
-    // path目录
-    export const pageFolder = workspaceFolders ? `${workspaceFolders[0].uri.fsPath}\\${config.pagePath}` : ''
 
     /**
      * 创建文件
@@ -34,17 +30,56 @@ export namespace Create {
      * 创建页面
      * @param pageName 页面名称
      */
-    export function createPage(pageName: string): void {
-        if (!pageFolder) return void 0;
-        const pagePath = `${pageFolder}\\${pageName}`;
+    export function createPage(pageName: string, uri: vscode.Uri): void {
+        let pagePath: string = ""; // 页面路径
+        let rootPath: string = ""; // 小程序根路径
+        if (uri.fsPath.match(/pages$/)) {
+            // 在pages目录点击的话
+            pagePath = `${uri.fsPath}\\${pageName}`;
+            rootPath = uri.fsPath.replace('\\pages', '');
+        }
+        else {
+            // 根目录点击新建
+            pagePath = `${uri.fsPath}\\pages\\${pageName}`;
+            rootPath = uri.fsPath;
+        }
         let createFolderPro = createFolder(vscode.Uri.file(pagePath));
         createFolderPro.then(() => {
-            for (let [i, v] of Object.entries(config.templates)) {
-                let filePath = vscode.Uri.file(`${pagePath}\\${pageName}.${i}`);
-                createFile(filePath, v);
+            try {
+                for (let [i, v] of Object.entries(config.templates)) {
+                    let filePath = vscode.Uri.file(`${pagePath}\\${pageName}.${i}`);
+                    createFile(filePath, v);
+                }
+                // 更新app.json中的pages
+                updatePages(vscode.Uri.file(`${rootPath}\\app.json`), pageName)
+                vscode.window.showInformationMessage('创建页面成功');
+            }
+            catch (e) {
+                vscode.window.showErrorMessage('创建页面失败');
             }
         });
     }
 
+    /**
+     * 更新页面配置文件
+     * @param uri 小程序根地址
+     * @param pageName 页面名称
+     */
+    export function updatePages(uri: vscode.Uri, pageName: string) {
+        let getFilePromise = vscode.workspace.fs.readFile(uri);
+        getFilePromise.then(value => {
+            let appJson = Uint8ArrayToString(value);
+            try {
+                let appConfig: any = JSON.parse(appJson);
+                appConfig.pages.push(`pages/${pageName}/${pageName}`)
+                appJson = JSON.stringify(appConfig);
+                // 存在格式化问题，调用一次格式化再写入
+                appJson = formatTextDucument(appJson,'json');
+                vscode.workspace.fs.writeFile(uri, stringToUint8Array(appJson))
+            }
+            catch (e) {
 
+            }
+        })
+    }
 }
