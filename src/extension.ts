@@ -13,9 +13,7 @@ export function activate(context: vscode.ExtensionContext) {
 	// The commandId parameter must match the command field in package.json
 
 	let newPage = vscode.commands.registerCommand("wechat.newPage",(e)=>{
-		console.log(vscode.window.activeTextEditor);
-		// const uri = vscode.Uri.parse(rootPath);
-		// console.log(vscode.workspace.fs.stat(rootPath))
+		const uri = vscode.Uri.parse(e.fsPath);		
 		try{
 			let inputPromise = vscode.window.showInputBox({
 				placeHolder:"请输入页面名称",
@@ -23,7 +21,7 @@ export function activate(context: vscode.ExtensionContext) {
 			inputPromise.then(v=>{
 				// 用户输入的页面名称
 				if(!v) return void 0;
-				Create.createPage(v);		
+				Create.createPage(v,uri);		
 			});
 		}catch(e){
 			vscode.window.showErrorMessage(String(e));
