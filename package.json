@@ -2,7 +2,7 @@
     "name": "miniprogram",
     "displayName": "微信小程序扩展",
     "description": "微信小程序扩展,wechat,miniprogram",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "icon": "resources/images/wechat.png",
     "publisher": "zsh",
     "repository": {
