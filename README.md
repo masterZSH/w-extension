@@ -16,3 +16,8 @@
 
 ## 展示
 ![图片](https://github.com/masterZSH/w-extension/blob/master/resources/images/1.gif)
+
+
+## 使用
+
+安装拓展程序，vscode打开微信小程序项目。
