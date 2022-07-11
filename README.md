@@ -15,4 +15,4 @@
 
 
 ## 展示
-![图片](https://filezsh.oss-cn-shenzhen.aliyuncs.com/images/1.gif)
+![图片](https://cdn.74b.cc/images/1.gif)
