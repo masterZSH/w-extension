@@ -15,7 +15,7 @@
 
 
 ## 展示
-![图片](http://cdn.74b.cc/images/1.gif)
+![图片](https://cdn.74b.cc/images/1.gif)
 
 
 ## 使用
