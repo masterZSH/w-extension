@@ -116,7 +116,7 @@
         "@types/prettier": "1.18.3",
         "@types/vscode": "^1.39.0",
         "glob": "^7.1.4",
-        "mocha": "^6.1.4",
+        "mocha": "^6.2.3",
         "prettier": "1.18.2",
         "tslint": "^5.12.1",
         "typescript": "^3.3.1",
